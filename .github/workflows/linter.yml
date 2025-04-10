@@ -48,4 +48,8 @@ jobs:
           VALIDATE_JAVASCRIPT_STANDARD: false
           VALIDATE_TYPESCRIPT_STANDARD: false
           VALIDATE_JSCPD: false
-          VALIDATE_YAML_PRETTIER: false
+          VALIDATE_YAML_PRETTIER: true
+          # Uncomment this step to verify 'deno fmt' on each commit.
+      - name: Verify formatting
+        run: deno fmt --check  # Verify that the code is formatted according to Deno's standard
+
